@@ -1,0 +1,11 @@
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/bin/Debug/net10.0/Pizzaria.Domain.deps.json
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/bin/Debug/net10.0/Pizzaria.Domain.dll
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/bin/Debug/net10.0/Pizzaria.Domain.pdb
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.AssemblyInfoInputs.cache
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.AssemblyInfo.cs
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.csproj.CoreCompileInputs.cache
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.dll
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/refint/Pizzaria.Domain.dll
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/Pizzaria.Domain.pdb
+/home/raissa/Projetos/pizzaria-backend/Pizzaria.Domain/obj/Debug/net10.0/ref/Pizzaria.Domain.dll

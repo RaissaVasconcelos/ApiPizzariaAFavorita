@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Pizzaria.Api/Pizzaria.Api.csproj" />
+  <Project Path="Pizzaria.Domain/Pizzaria.Domain.csproj" />
+</Solution>
