@@ -1,4 +1,5 @@
 namespace Pizzaria.Domain.Entities;
+using Pizzaria.Domain.Common.Exceptions;
 
 public class Address
 {
@@ -24,27 +25,27 @@ public class Address
   {
     if (string.IsNullOrWhiteSpace(street))
     {
-      throw new ArgumentException("Rua obrigatória");
+      throw new DomainException("Rua obrigatória");
     }
 
     if (string.IsNullOrWhiteSpace(number))
     {
-      throw new ArgumentException("Numero obrigatório");
+      throw new DomainException("Numero obrigatório");
     }
 
     if (string.IsNullOrWhiteSpace(neighborhood))
     {
-      throw new ArgumentException("Bairro obrigatório");
+      throw new DomainException("Bairro obrigatório");
     }
 
     if (string.IsNullOrWhiteSpace(city))
     {
-      throw new ArgumentException("Cidade obrigatório");
+      throw new DomainException("Cidade obrigatório");
     }
     
     if (string.IsNullOrWhiteSpace(zipcode))
     {
-      throw new ArgumentException("Cep obrigatório");
+      throw new DomainException("Cep obrigatório");
     }
 
     Id = Guid.NewGuid();

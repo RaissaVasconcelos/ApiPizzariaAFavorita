@@ -1,3 +1,4 @@
+using Pizzaria.Domain.Common.Exceptions;
 namespace Pizzaria.Domain.Entities;
 
 public class Customer
@@ -14,37 +15,37 @@ public class Customer
   {
     if (string.IsNullOrWhiteSpace(name))
     { 
-      throw new ArgumentException("Nome obrigatório");
+      throw new DomainException("Nome obrigatório");
     }
 
     if (string.IsNullOrWhiteSpace(email))
     {
-      throw new ArgumentException("Email obrigatório");
+      throw new DomainException("Email obrigatório");
     }
 
     if (string.IsNullOrWhiteSpace(phone))
     {
-      throw new ArgumentException("Telefone obrigatório");
+      throw new DomainException("Telefone obrigatório");
     }
 
     if (name.Length > 150)
     {
-      throw new ArgumentException("Nome deve possuir no máximo 150 caracteres");
+      throw new DomainException("Nome deve possuir no máximo 150 caracteres");
     }
 
     if (email.Length > 150)
     {
-      throw new ArgumentException("Email deve possuir no máximo 150 caracteres");
+      throw new DomainException("Email deve possuir no máximo 150 caracteres");
     }
 
     if (phone.Length > 20)
     {
-      throw new ArgumentException("Telefone inválido");
+      throw new DomainException("Telefone inválido");
     }
 
     if (email.Contains('@'))
     {
-      throw new ArgumentException("Email invalido");
+      throw new DomainException("Email invalido");
     }
 
     Id = Guid.NewGuid();

@@ -1,4 +1,4 @@
-using System.IO.Compression;
+using Pizzaria.Domain.Common.Exceptions;
 
 namespace Pizzaria.Domain.Entities;
 
@@ -22,33 +22,33 @@ public class Product
   {
     if (string.IsNullOrWhiteSpace(name))
     {
-      throw new ArgumentException("Nome do grupo é obrigatório");
+      throw new DomainException("Nome do grupo é obrigatório");
     }
 
     if (min < 0)
     {
-      throw new ArgumentException("Min não pode ser negativo");
+      throw new DomainException("Min não pode ser negativo");
     }
 
     if (max <= 0)
     {
-      throw new ArgumentException("Max não pode ser menor ou igual a zero");
+      throw new DomainException("Max não pode ser menor ou igual a zero");
     }
 
     if (min > max)
     {
-      throw new ArgumentException("Min não pode ser maior que Max");
+      throw new DomainException("Min não pode ser maior que Max");
     }
 
     if (_complementGroups.Any(x =>
       x.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
     {
-      throw new ArgumentException("Já existe um grupo com esse nome");
+      throw new DomainException("Já existe um grupo com esse nome");
     }
 
     if (!isRequired && min > 0)
     {
-      throw new ArgumentException("Um grupo opcional não pode exigir quantidade mínima");
+      throw new DomainException("Um grupo opcional não pode exigir quantidade mínima");
     }
 
     var group = new ProductComplementGroup(name, Id, min, max);
@@ -64,7 +64,7 @@ public class Product
 
     if (group is null)
     {
-      throw new ArgumentException("Grupo não encontrado");
+      throw new DomainException("Grupo não encontrado");
     }
 
     _complementGroups.Remove(group);
@@ -79,22 +79,22 @@ public class Product
 
     if (string.IsNullOrWhiteSpace(name))
     {
-      throw new ArgumentException("Nome é obrigatório");
+      throw new DomainException("Nome é obrigatório");
     }
 
     if (name.Length > 150)
     {
-      throw new ArgumentException("Nome invalido");
+      throw new DomainException("Nome invalido");
     }
 
     if (price <= 0)
     {
-      throw new ArgumentException("Preço invalido");
+      throw new DomainException("Preço invalido");
     }
 
     if (categoryId == Guid.Empty)
     {
-      throw new ArgumentException("Categoria inválida");
+      throw new DomainException("Categoria inválida");
     }
 
     Id = Guid.NewGuid();

@@ -1,4 +1,5 @@
 using Pizzaria.Domain.Enums;
+using Pizzaria.Domain.Common.Exceptions;
 
 namespace Pizzaria.Domain.Entities;
 
@@ -35,12 +36,12 @@ public class Order
   {
     if (customerId == Guid.Empty)
     {
-      throw new ArgumentException("Cliente inválido");
+      throw new DomainException("Cliente inválido");
     }
 
     if (addressId == Guid.Empty)
     {
-      throw new ArgumentException("Endereço inválido");
+      throw new DomainException("Endereço inválido");
     }
 
     Id = Guid.NewGuid();

@@ -108,8 +108,8 @@ Pizza Média
 # 🚧 Próximos Passos
 
 ## Domínio
-- [ ] Criar `DomainException`
-- [ ] Revisar e refinar validações das entidades
+- [x] Criar `DomainException`
+- [x] Revisar e refinar validações das entidades
 
 ## Persistência
 - [ ] Criar `PizzariaDbContext`

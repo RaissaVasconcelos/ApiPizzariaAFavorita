@@ -1,4 +1,5 @@
 namespace Pizzaria.Domain.Entities;
+using Pizzaria.Domain.Common.Exceptions;
 
 public class Category
 {
@@ -10,7 +11,7 @@ public class Category
   {
     if (string.IsNullOrWhiteSpace(name))
     {
-      throw new ArgumentException("Nome obrigatório");
+      throw new DomainException("Nome obrigatório");
     }
 
     Id = Guid.NewGuid();

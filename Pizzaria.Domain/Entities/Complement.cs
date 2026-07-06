@@ -1,4 +1,5 @@
 using Pizzaria.Domain.Enums;
+using Pizzaria.Domain.Common.Exceptions;
 
 namespace Pizzaria.Domain.Entities;
 
@@ -24,17 +25,17 @@ public class Complement
   {
     if (string.IsNullOrWhiteSpace(name))
     {
-      throw new ArgumentException("Nome obrigatório");
+      throw new DomainException("Nome obrigatório");
     }
 
     if (name.Length > 100)
     {
-      throw new ArgumentException("Nome inválido");
+      throw new DomainException("Nome inválido");
     }
 
     if (description?.Length > 500)
     {
-      throw new ArgumentException("Descrição invalida");
+      throw new DomainException("Descrição invalida");
     }
 
     Id = Guid.NewGuid();

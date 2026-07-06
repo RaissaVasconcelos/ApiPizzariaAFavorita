@@ -1,3 +1,4 @@
+using Pizzaria.Domain.Common.Exceptions;
 namespace Pizzaria.Domain.Entities;
 
 public class ProductComplement
@@ -12,17 +13,17 @@ public class ProductComplement
   {
     if (productId == Guid.Empty)
     {
-      throw new ArgumentException("Produto inválido");
+      throw new DomainException("Produto inválido");
     }
 
     if (complementId == Guid.Empty)
     {
-      throw new ArgumentException("Complemento inválido");
+      throw new DomainException("Complemento inválido");
     }
 
     if (price < 0)
     {
-      throw new ArgumentException("Preço inválido");
+      throw new DomainException("Preço inválido");
     }
 
     ProductId = productId;

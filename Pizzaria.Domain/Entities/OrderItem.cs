@@ -1,3 +1,4 @@
+using Pizzaria.Domain.Common.Exceptions;
 namespace Pizzaria.Domain.Entities;
 
 public class OrderItem
@@ -18,17 +19,17 @@ public class OrderItem
   {
     if (productId == Guid.Empty)
     {
-      throw new ArgumentException("Produto inválido");
+      throw new DomainException("Produto inválido");
     }
 
     if (quantity <= 0)
     {
-      throw new ArgumentException("A quantidade deve ser maior que zero");
+      throw new DomainException("A quantidade deve ser maior que zero");
     }
 
     if (unitPrice <= 0)
     {
-      throw new ArgumentException("O preço unitário deve ser maior que zero");
+      throw new DomainException("O preço unitário deve ser maior que zero");
     }
 
     ProductId = productId;
@@ -40,7 +41,7 @@ public class OrderItem
   {
       if (quantity <= 0)
     {
-      throw new ArgumentException("Quantidade inválida");
+      throw new DomainException("Quantidade inválida");
     }
 
     Quantity = quantity;

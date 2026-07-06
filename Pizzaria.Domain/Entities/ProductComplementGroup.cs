@@ -1,3 +1,4 @@
+using Pizzaria.Domain.Common.Exceptions;
 namespace Pizzaria.Domain.Entities;
 
 public class ProductComplementGroup
@@ -16,19 +17,19 @@ public class ProductComplementGroup
   {
     if (Guid.Empty == complementId)
     {
-      throw new ArgumentException("Complemento é obrigatório");
+      throw new DomainException("Complemento é obrigatório");
     }
 
     if (price < 0)
     {
-      throw new ArgumentException("Preço inválido");
+      throw new DomainException("Preço inválido");
     }
     
     var alreadyExists = _complements.Any(x => x.ComplementId == complementId);
     
     if (alreadyExists)
     {
-      throw new ArgumentException("Este complemento ja foi adicionado ao grupo");
+      throw new DomainException("Este complemento ja foi adicionado ao grupo");
     }
 
     var productComplement = new ProductComplement(ProductId, complementId, Id, price);
@@ -44,7 +45,7 @@ public class ProductComplementGroup
 
     if (productComplement is null)
     {
-      throw new ArgumentException("Complemento não encontrado");
+      throw new DomainException("Complemento não encontrado");
     }
   }
 
@@ -52,27 +53,27 @@ public class ProductComplementGroup
   {
     if (string.IsNullOrEmpty(name))
     {
-      throw new ArgumentException("Nome é obrigatório");
+      throw new DomainException("Nome é obrigatório");
     }
     if (productId == Guid.Empty)
     {
-      throw new ArgumentException("Id do produto é obrigatório");
+      throw new DomainException("Id do produto é obrigatório");
     }
     if (minSelection < 0)
     {
-      throw new ArgumentException("Quantidade minima invalida");
+      throw new DomainException("Quantidade minima invalida");
     }
     if (maxSelection <= 0)
     {
-      throw new ArgumentException("Quantidade máxima invalida");
+      throw new DomainException("Quantidade máxima invalida");
     }
     if (minSelection < maxSelection)
     {
-      throw new ArgumentException("Quantidade máxima não pode ser menor que a minima");
+      throw new DomainException("Quantidade máxima não pode ser menor que a minima");
     }
     if (!IsRequired && minSelection > 0)
     {
-      throw new ArgumentException("Um grupo opcional não pode exigir quantidade minima");
+      throw new DomainException("Um grupo opcional não pode exigir quantidade minima");
     }
 
     Id = Guid.NewGuid();
